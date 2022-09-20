@@ -1,0 +1,48 @@
+---
+title: "Cell of Origin hackaton"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup}
+library(data.table)
+```
+
+Load the data
+
+```{r}
+mutations <- fread("data/mutations.tsv")
+mapping <- fread("data/mapping.tsv", header = FALSE)
+predictors <- fread("data/predictors.tsv")
+tissues <- fread("data/tissues.tsv", header = FALSE)
+```
+ 
+Mutational density in genomic bins (rows) from different cancer types (columns)
+
+```{r}
+dim(mutations)
+head(mutations)
+```
+
+Mapping of cancer types to tissues
+
+```{r}
+dim(mapping)
+head(mapping)
+```
+
+Epigenetic features in genomic bins (rows) from different cell lines.
+
+```{r}
+dim(predictors)
+head(predictors)
+```
+
+Mappings of cell lines to tissues
+
+```{r}
+dim(tissues)
+head(tissues)
+```
+
